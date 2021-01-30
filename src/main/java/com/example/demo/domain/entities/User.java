@@ -1,11 +1,18 @@
 package com.example.demo.domain.entities;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.annotation.processing.Generated;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Document
 public class User implements Serializable {
 
 
+    @Id
     private String id;
     private String name;
     private String email;
