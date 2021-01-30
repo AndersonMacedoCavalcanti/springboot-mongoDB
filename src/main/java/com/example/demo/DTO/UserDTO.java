@@ -1,5 +1,6 @@
 package com.example.demo.DTO;
 
+import com.example.demo.domain.entities.Post;
 import com.example.demo.domain.entities.User;
 
 import java.io.Serializable;
