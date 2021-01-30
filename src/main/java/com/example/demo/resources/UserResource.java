@@ -1,6 +1,7 @@
 package com.example.demo.resources;
 
 import com.example.demo.DTO.UserDTO;
+import com.example.demo.domain.entities.Post;
 import com.example.demo.domain.entities.User;
 import com.example.demo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +55,10 @@ public class UserResource {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<Post>> findPost(@PathVariable String id){
+        User user = userService.findById(id);
+        return ResponseEntity.ok().body(user.getPostList());
+    }
 
 }
