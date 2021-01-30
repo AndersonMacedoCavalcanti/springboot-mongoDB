@@ -30,6 +30,12 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public void deletar(String id){
+        findById(id);
+        userRepository.deleteById(id);
+    }
+
+
     //fere um pouco o principio de reponsabilidade,
     //mas colocamos para que possamos futuramente acessar,
     //o banco de dados com a instancia userRepository
